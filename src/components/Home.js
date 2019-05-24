@@ -6,7 +6,7 @@ class Home extends Component {
         return (
             <ul className="list">
                 {cardsCharacters
-                    .filter(item => item.name.includes(queryName))
+                    .filter(item => item.name.toLowerCase().includes(queryName.toLowerCase()))
                     .map(item => {
                         return (
                             <li className="card__li" key={item.id}>
