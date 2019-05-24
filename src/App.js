@@ -23,8 +23,6 @@ class App extends React.Component {
           return {...item, id: index}
         });
 
-
-
        this.setState({
          cards: newCards
        });
