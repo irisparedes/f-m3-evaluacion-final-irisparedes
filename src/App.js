@@ -4,7 +4,7 @@ import {fetchPotter} from './services/fetchPotter';
 import {Switch, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Card from './components/Card';
-
+import Filters from './components/Filters';
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -49,10 +49,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1 className="title">Harry Potter Characters</h1>
-        <div className="filters">
-          <label htmlFor="name">Busca por nombre</label>
-          <input type="text" className="input" id="name" onChange={this.handleFilterName}/>
-        </div>
+        <Filters 
+          filterName={this.handleFilterName}
+        />
+        
         <Switch>
           <Route exact path="/" render={() => <Home 
             cardsCharacters={cards}
