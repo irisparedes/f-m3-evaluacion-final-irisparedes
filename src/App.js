@@ -1,7 +1,28 @@
 import React from 'react';
 import './App.css';
+import {fetchPotter} from './services/fetchPotter';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      cards: []
+    };
+  }
+
+  componentDidMount() {
+    this.getCards();
+  }
+
+  getCards() {
+    fetchPotter()
+      .then(data => {
+       console.log(data);
+      });
+  }
+
+
   render() {
     return (
       <div className="App">
