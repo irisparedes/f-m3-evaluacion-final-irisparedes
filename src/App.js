@@ -10,12 +10,23 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      cards: []
+      cards: [],
+      queryName: ''
     };
+    this.handleFilterName = this.handleFilterName.bind(this);
   }
 
   componentDidMount() {
     this.getCards();
+  }
+
+  handleFilterName(event) {
+    const cardQuery = event.currentTarget.value;
+
+      this.setState({
+        queryName: cardQuery
+      })
+
   }
 
   getCards() {
@@ -34,14 +45,19 @@ class App extends React.Component {
 
 
   render() {
-    const {cards} = this.state;
+    const {cards, queryName} = this.state;
     return (
       <div className="App">
         <h1 className="title">Harry Potter Characters</h1>
-        <label htmlFor="input"></label>
-        <input type="text" className="input"/>
+        <div className="filters">
+          <label htmlFor="name">Busca por nombre</label>
+          <input type="text" className="input" id="name" onChange={this.handleFilterName}/>
+        </div>
         <Switch>
-          <Route exact path="/" render={() => <Home cardsCharacters={cards} />} />
+          <Route exact path="/" render={() => <Home 
+            cardsCharacters={cards}
+            queryName={queryName}
+             />} />
           <Route path="/card"  component={Card}/>
         </Switch>  
       </div>
