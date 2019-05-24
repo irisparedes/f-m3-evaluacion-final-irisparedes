@@ -18,27 +18,42 @@ class App extends React.Component {
   getCards() {
     fetchPotter()
       .then(data => {
-       console.log(data);
+
+        const newCards = data.map((item, index) => {
+          return {...item, id: index}
+        });
+
+
+
+       this.setState({
+         cards: newCards
+       });
       });
   }
 
 
   render() {
+    const {cards} = this.state;
     return (
       <div className="App">
         <h1 className="title">Harry Potter Characters</h1>
         <label htmlFor="input"></label>
         <input type="text" className="input"/>
         <ul className="list">
-          <li className="card__li">
-            <div className="card">
-              <div className="card__image">
-                <img src="" alt=""/>
-                <h2 className="name">Nombre Popoter</h2>
-                <h3 className="name__house">casita</h3>
-              </div>
-            </div>
-          </li>
+          {cards.map(item => {
+            return (
+              <li className="card__li">
+                <div className="card">
+                  <div className="card__image">
+                    <img src={item.image} alt={item.name}/>
+                    <h2 className="name">{item.name}</h2>
+                    <h3 className="name__house">{item.house}</h3>
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+          
         </ul>
       </div>
     );
