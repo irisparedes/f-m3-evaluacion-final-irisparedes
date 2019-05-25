@@ -1,26 +1,17 @@
 import React, {Component} from 'react';
+import Filters from './Filters';
+import CardList from './CardList';
 
 class Home extends Component {
     render() {
-        const {cardsCharacters, queryName} = this.props;
+        const {cardsCharacters, queryName, filterName} = this.props;
         return (
-            <ul className="list">
-                {cardsCharacters
-                    .filter(item => item.name.toLowerCase().includes(queryName.toLowerCase()))
-                    .map(item => {
-                        return (
-                            <li className="card__li" key={item.id}>
-                                <div className="card">
-                                    <div className="card__image">
-                                        <img src={item.image} alt={item.name}/>
-                                        <h2 className="name">{item.name}</h2>
-                                        <h3 className="name__house">{item.house}</h3>
-                                    </div>
-                                </div>
-                            </li>
-                        );
-                })}
-            </ul>
+            <React.Fragment>
+                <h1 className="title">Harry Potter Characters</h1>
+                <Filters filterName={filterName} queryName={queryName}/>
+                <CardList cardsCharacters={cardsCharacters} queryName={queryName} />
+            </React.Fragment>
+               
         );
     }
 }

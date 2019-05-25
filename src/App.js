@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import {fetchPotter} from './services/fetchPotter';
-import {Switch, Route} from 'react-router-dom';
 import Home from './components/Home';
-import Card from './components/Card';
-import Filters from './components/Filters';
+import './components/CardList';
+import DetailsCard from './components/DetailsCard';
+import { Link, Switch, Route} from 'react-router-dom';
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -14,6 +15,8 @@ class App extends React.Component {
       queryName: ''
     };
     this.handleFilterName = this.handleFilterName.bind(this);
+    this.getCards = this.getCards.bind(this);
+    this.resetFilters = this.resetFilters.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +30,10 @@ class App extends React.Component {
         queryName: cardQuery
       })
 
+  }
+
+  resetFilters() {
+    this.setState({queryName: ''});
   }
 
   getCards() {
@@ -48,17 +55,19 @@ class App extends React.Component {
     const {cards, queryName} = this.state;
     return (
       <div className="App">
-        <h1 className="title">Harry Potter Characters</h1>
-        <Filters 
-          filterName={this.handleFilterName}
-        />
-        
+        {/* <h1 className="title">Harry Potter Characters</h1> */}
+        <Link className="menu__link" to="/">Home</Link>
         <Switch>
           <Route exact path="/" render={() => <Home 
             cardsCharacters={cards}
             queryName={queryName}
+            filterName={this.handleFilterName}
              />} />
-          <Route path="/card"  component={Card}/>
+          <Route path="/detailscard/:id"  render={routerProps => <DetailsCard 
+            match={routerProps.match} 
+            cardsCharacters={cards}
+            resetFilters={this.resetFilters}
+            />}/>
         </Switch>  
       </div>
     );
