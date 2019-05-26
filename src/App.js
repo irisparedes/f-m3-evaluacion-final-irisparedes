@@ -55,8 +55,7 @@ class App extends React.Component {
     const {cards, queryName} = this.state;
     return (
       <div className="App">
-        {/* <h1 className="title">Harry Potter Characters</h1> */}
-        <Link className="app__menu-link" to="/">Home</Link>
+        {/* <Link className="app__menu-link" to="/">Home</Link> */}
         <Switch>
           <Route exact path="/" render={() => <Home 
             cardsCharacters={cards}

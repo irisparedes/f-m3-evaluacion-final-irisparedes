@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Card from './Card';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class CardList extends Component {
     render() {
@@ -26,5 +27,9 @@ class CardList extends Component {
     }    
 }
 
+CardList.propTypes = {
+    cardsCharacters: PropTypes.array,
+    queryName: PropTypes.string,
+};
 
 export default CardList;

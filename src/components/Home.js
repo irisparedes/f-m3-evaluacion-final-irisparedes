@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Filters from './Filters';
 import CardList from './CardList';
+import PropTypes from 'prop-types';
 
 class Home extends Component {
     render() {
@@ -16,5 +17,14 @@ class Home extends Component {
     }
 }
 
+Home.propTypes = {
+    cardsCharacters: PropTypes.array,
+    queryName: PropTypes.string,
+    filterName: PropTypes.func
+};
+
+
+
 export default Home;
+
 

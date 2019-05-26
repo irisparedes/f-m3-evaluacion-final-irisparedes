@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 class DetailsCard extends Component {
@@ -48,16 +49,18 @@ class DetailsCard extends Component {
 
                         <Link to="/" className="details__back-link">Volver</Link>
                     </div>
-            :
-            <p>No hay información</p>
-
-        } 
+                        :
+                        <p>No hay información</p>
+                } 
             </React.Fragment>
-
-       
         );
     }    
 }
 
+DetailsCard.propTypes = {
+    match: PropTypes.object,
+    cardsCharacters: PropTypes.array,
+    resetFilters: PropTypes.func
+};
 
 export default DetailsCard;

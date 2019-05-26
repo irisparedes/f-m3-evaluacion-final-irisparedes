@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends Component {
     render() {
         const {item} = this.props;
-        // console.log(this.props.match)
-        // console.log(this.props.cardsCharacters);
         return (
             <React.Fragment>
                 <img src={item.image} alt={item.name} className="card__image-character"/>
@@ -17,6 +16,8 @@ class Card extends Component {
         );
     }    
 }
-
+Card.propTypes = {
+    item: PropTypes.object
+};
 
 export default Card;
