@@ -13,7 +13,7 @@ class CardList extends Component {
                         .map(item => {
                             return (
                                 <li className="card__li" key={item.id}>
-                                    <Link className="character__link" to={`/detailscard/${item.id}`}>
+                                    <Link className="cardList__link" to={`/detailscard/${item.id}`}>
                                         <Card item={item}/>
                                     </Link>
                                 </li>

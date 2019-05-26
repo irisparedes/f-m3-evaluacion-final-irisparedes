@@ -7,7 +7,7 @@ class Home extends Component {
         const {cardsCharacters, queryName, filterName} = this.props;
         return (
             <React.Fragment>
-                <h1 className="title">Harry Potter Characters</h1>
+                <h1 className="home__title">Harry Potter Characters</h1>
                 <Filters filterName={filterName} queryName={queryName}/>
                 <CardList cardsCharacters={cardsCharacters} queryName={queryName} />
             </React.Fragment>

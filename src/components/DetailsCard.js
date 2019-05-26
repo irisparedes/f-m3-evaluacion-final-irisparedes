@@ -14,39 +14,37 @@ class DetailsCard extends Component {
         return (
             <React.Fragment>
                {character ?
-                    <div className="details">
-                    <img src={character.image} alt={character.name} className="details-character-image"/>
-                        <div className="details-character-info">
+                    <div className="details__card">
+                    <img src={character.image} alt={character.name} className="details__image"/>
+                        <div className="details__character">
 
-                        <h1 className="details-character-name">Name: {character.name}</h1>
+                        <h1 className="details__name">{character.name}</h1>
 
                         {character.house ? 
-                        <p className="details-character-house">Casa: {character.house}</p>
+                        <p className="details__house">Casa: {character.house}</p>
                         :
-                        <p className="details-character-house">Casa: No pertenece a ninguna casa</p>
+                        <p className="details__house">Casa: No pertenece a ninguna casa</p>
                         }
 
-                        
-
                         {character.yearOfBirth ?
-                        <p className="character-birthyear">Nacimiento: {character.yearOfBirth}</p>
+                        <p className="details__year">Nacimiento: {character.yearOfBirth}</p>
                         :
-                        <p className="character-birthyear">Nacimiento: Unknown</p>
+                        <p className="details__year">Nacimiento: Unknown</p>
                         }
 
                         {character.patronus ?
-                        <p className="character-patronus">Patronus: {character.patronus}</p>
+                        <p className="details__patronus">Patronus: {character.patronus}</p>
                         :
-                        <p className="character-patronus">Patronus: Ninguno</p>              
+                        <p className="details__patronus">Patronus: Ninguno</p>              
                         }
  
                         {character.alive === true ? 
-                        <p className="character__status">Estado: Vivo</p>
+                        <p className="details__status">Estado: Vivo</p>
                         : 
-                        <p className="character__status">Estado: DEP sustituir por icono</p>
+                        <p className="details__status">Estado: DEP sustituir por icono</p>
                         }
-                </div>
-            </div>
+                        </div>
+                    </div>
             :
             <p>No hay información</p>
 
