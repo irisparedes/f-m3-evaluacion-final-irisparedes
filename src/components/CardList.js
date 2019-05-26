@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 class CardList extends Component {
     render() {
-        const {cardsCharacters, queryName} = this.props;
+        const {cardsCharacters, queryName, paintHouse} = this.props;
         return (
             <div className="card__list">
                 <ul className="list">
@@ -15,7 +15,7 @@ class CardList extends Component {
                             return (
                                 <li className="card__li" key={item.id}>
                                     <Link className="cardList__link" to={`/detailscard/${item.id}`}>
-                                        <Card item={item}/>
+                                        <Card item={item} paintHouse={paintHouse}/>
                                     </Link>
                                 </li>
                             );
@@ -30,6 +30,7 @@ class CardList extends Component {
 CardList.propTypes = {
     cardsCharacters: PropTypes.array,
     queryName: PropTypes.string,
+    paintHouse: PropTypes.func
 };
 
 export default CardList;

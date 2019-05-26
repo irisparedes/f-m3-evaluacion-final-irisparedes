@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 
 class Home extends Component {
     render() {
-        const {cardsCharacters, queryName, filterName} = this.props;
+        const {cardsCharacters, queryName, filterName, paintHouse} = this.props;
         return (
             <React.Fragment>
                 <h1 className="home__title">Harry Potter Characters</h1>
                 <Filters filterName={filterName} queryName={queryName}/>
-                <CardList cardsCharacters={cardsCharacters} queryName={queryName} />
+                <CardList cardsCharacters={cardsCharacters} queryName={queryName} paintHouse={paintHouse} />
             </React.Fragment>
                
         );
@@ -20,7 +20,8 @@ class Home extends Component {
 Home.propTypes = {
     cardsCharacters: PropTypes.array,
     queryName: PropTypes.string,
-    filterName: PropTypes.func
+    filterName: PropTypes.func,
+    paintHouse: PropTypes.func
 };
 
 

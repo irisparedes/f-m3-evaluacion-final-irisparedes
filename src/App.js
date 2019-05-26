@@ -4,7 +4,12 @@ import {fetchPotter} from './services/fetchPotter';
 import Home from './components/Home';
 import './components/CardList';
 import DetailsCard from './components/DetailsCard';
-import { Link, Switch, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
+import redHouse from './images/gryffindor.png';
+import greenHouse from './images/slytherin.png';
+import yellowHouse from './images/hufflepuff.png';
+import blueHouse from './images/ravenclaw.png';
+
 
 class App extends React.Component {
   constructor(props){
@@ -50,9 +55,22 @@ class App extends React.Component {
       });
   }
 
+  paintHouse(character) {
+    const house = character.house.toLowerCase();
+    if(house === 'gryffindor') {
+      return redHouse
+    }else if (house === 'slytherin') {
+      return greenHouse
+    }else if (house === 'hufflepuff') {
+      return yellowHouse
+    } else {
+      return blueHouse
+    }
+  }
 
   render() {
     const {cards, queryName} = this.state;
+    const {resetFilters, paintHouse} = this;
     return (
       <div className="App">
         {/* <Link className="app__menu-link" to="/">Home</Link> */}
@@ -61,11 +79,13 @@ class App extends React.Component {
             cardsCharacters={cards}
             queryName={queryName}
             filterName={this.handleFilterName}
+            paintHouse={paintHouse}
              />} />
           <Route path="/detailscard/:id"  render={routerProps => <DetailsCard 
             match={routerProps.match} 
             cardsCharacters={cards}
-            resetFilters={this.resetFilters}
+            resetFilters={resetFilters}
+            paintHouse={paintHouse}
             />}/>
         </Switch>  
       </div>

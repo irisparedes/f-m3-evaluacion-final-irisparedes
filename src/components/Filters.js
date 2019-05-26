@@ -6,7 +6,7 @@ class Filters extends Component {
         const {filterName} = this.props;
         return (
             <div className="filters">
-                <label htmlFor="name">Busca por nombre</label>
+                <label htmlFor="name">Busca por nombre de personaje</label>
                 <input type="text" className="input" id="name" onChange={filterName}/>
             </div>
 
