@@ -42,7 +42,7 @@ class DetailsCard extends Component {
                         {character.alive === true ? 
                         <p className="details__status">Estado: Vivo</p>
                         : 
-                        <p className="details__status">Estado: DEP sustituir por icono</p>
+                        <p className="details__status">Estado: <span className="calavera">☠</span></p>
                         }
                         </div>
 
