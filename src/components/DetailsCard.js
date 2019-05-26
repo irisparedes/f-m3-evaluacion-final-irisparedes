@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 
 class DetailsCard extends Component {
@@ -44,6 +45,8 @@ class DetailsCard extends Component {
                         <p className="details__status">Estado: DEP sustituir por icono</p>
                         }
                         </div>
+
+                        <Link to="/" className="details__back-link">Volver</Link>
                     </div>
             :
             <p>No hay información</p>
