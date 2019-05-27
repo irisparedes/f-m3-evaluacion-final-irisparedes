@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {fetchPotter} from './services/fetchPotter';
 import Home from './components/Home';
 import './components/CardList';

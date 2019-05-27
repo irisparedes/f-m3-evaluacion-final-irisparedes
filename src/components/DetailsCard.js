@@ -52,15 +52,12 @@ class DetailsCard extends Component {
                             <p className="details__status">Estado: <span className="calavera">☠</span></p>
                             }
                         </div>
-                        <Link to="/" className="details__back-link">Volver</Link>
-                            
+                        <Link to="/" className="details__back-link">Volver</Link>  
                     </div>
                             :
                             <p>No hay información</p>
                 } 
-                
             </React.Fragment>
-            
         );
     }    
 }
