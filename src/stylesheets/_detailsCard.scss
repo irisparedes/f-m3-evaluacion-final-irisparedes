@@ -1,56 +1,43 @@
 
 .details__card {
-    border: 2px solid red;
-      background-color: grey; //quitar color de fondo??
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    //   height: 370px;
-    //   width: 100%;
-      max-width: 250px;
-      color: silver;
-      text-decoration: none;
-      font-size: 16px;
-    //   @media all and (min-width: 768px) {
-    //     height: 400px;
-    //   }
-    //   @media all and (min-width: 1024px) {
-    //     font-size: 16px;
-    //   }
+    border: 2px solid rgb(44, 4, 4);
+    background-color: rgb(88, 30, 30);
+    position: relative;
+    display: flex;
+    border-radius: 3%;
+    flex-direction: column;
+    min-width: 280px;
+    border: 2px solid silver;
+    color:silver;
+    font-size: 24px;
+    @media all and (min-width: 768px) {
+        margin: auto;
+        box-sizing: border-box;
+        flex-direction: row;
+        min-width: 600px;
+        max-width: 800px;
+  }
+
+    .details__image {
+        padding: 10px;
+        width: 90%;
+        max-width: 300px;
+        align-self: center;
     }
-//     display: flex;
-//     flex-direction: column;
-//     position: relative;
-//     min-width: 280px;
-//     border: 2px solid red;
-//     // color: white;
-//     font-size: 20px;
-//     @media all and (min-width: 768px) {
-//       margin: auto;
-//       box-sizing: border-box;
-//       flex-direction: row;
-//       min-width: 700px;
-//       max-width: 1000px;
-//     }
-// }
-.details__image {
-    padding: 10px;
-    width: 50%;
-    max-width: 300px;
-    align-self: center;
-}
     
 .details__character {
-    color:white;  
-    padding: 10px;
+    color: silver;  
+    padding: 5px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    justify-content: center;
+    width: 70%;
     @media all and (min-width: 1024px) {
     font-size: 20px;
     }
     @media all and (min-width: 1440px) {
-    font-size: 24px;
+    font-size: 32px;
     }
 }
     
@@ -63,8 +50,8 @@
     align-self: center;
     @media all and (min-width: 768px) {
     position: absolute;
-    right:0;
-    top:0;
+    right:140px;
+    top:170px;
     }
     @media all and (min-width: 1024px) {
     height: 100px;
@@ -73,10 +60,34 @@
 }
 .details__name {
     font-size: 20px;
+    margin-top: 0px;
     @media all and (min-width: 1024px) {
       font-size: 24px;
     }
     @media all and (min-width: 1440px) {
-      font-size: 24px;
+      font-size: 45px;
     }
+}
+
+}
+
+.details__back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color:silver;
+    font-weight: bold;
+    border: 2px solid rgb(44, 4, 4);
+    border-radius: 25px;
+    color:black;
+    margin: 15px;
+    padding: 5px;
+    width: 200px;
+    &:hover {
+        background-color: rgb(88, 30, 30);
+    }
+}
+p {
+    margin: 5px;
 }
