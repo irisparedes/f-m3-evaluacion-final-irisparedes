@@ -1,5 +1,6 @@
 {
   "name": "f-m3-evaluacion-final-irisparedes.git",
+  "homepage":"./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
