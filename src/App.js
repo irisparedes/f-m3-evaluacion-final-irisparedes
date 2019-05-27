@@ -9,6 +9,7 @@ import redHouse from './images/gryffindor.png';
 import greenHouse from './images/slytherin.png';
 import yellowHouse from './images/hufflepuff.png';
 import blueHouse from './images/ravenclaw.png';
+import './stylesheets/App.scss';
 
 
 class App extends React.Component {
@@ -73,21 +74,25 @@ class App extends React.Component {
     const {resetFilters, paintHouse} = this;
     return (
       <div className="App">
-        {/* <Link className="app__menu-link" to="/">Home</Link> */}
-        <Switch>
-          <Route exact path="/" render={() => <Home 
-            cardsCharacters={cards}
-            queryName={queryName}
-            filterName={this.handleFilterName}
-            paintHouse={paintHouse}
-             />} />
-          <Route path="/detailscard/:id"  render={routerProps => <DetailsCard 
-            match={routerProps.match} 
-            cardsCharacters={cards}
-            resetFilters={resetFilters}
-            paintHouse={paintHouse}
-            />}/>
-        </Switch>  
+        <header className="header">
+          <h1 className="App__title">Harry Potter Characters</h1>
+        </header>
+        <main className="main">
+          <Switch>
+            <Route exact path="/" render={() => <Home 
+              cardsCharacters={cards}
+              queryName={queryName}
+              filterName={this.handleFilterName}
+              paintHouse={paintHouse}
+              />} />
+            <Route path="/detailscard/:id"  render={routerProps => <DetailsCard 
+              match={routerProps.match} 
+              cardsCharacters={cards}
+              resetFilters={resetFilters}
+              paintHouse={paintHouse}
+              />}/>
+          </Switch> 
+        </main> 
       </div>
     );
   }

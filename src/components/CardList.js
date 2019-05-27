@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Card from './Card';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import '../stylesheets/_cardList.scss';
 
 class CardList extends Component {
     render() {

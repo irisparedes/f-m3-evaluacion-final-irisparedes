@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import '../stylesheets/_card.scss';
 
 class Card extends Component {
     render() {

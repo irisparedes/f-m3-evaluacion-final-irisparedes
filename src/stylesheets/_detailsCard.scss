@@ -1,0 +1,82 @@
+
+.details__card {
+    border: 2px solid red;
+      background-color: grey; //quitar color de fondo??
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    //   height: 370px;
+    //   width: 100%;
+      max-width: 250px;
+      color: silver;
+      text-decoration: none;
+      font-size: 16px;
+    //   @media all and (min-width: 768px) {
+    //     height: 400px;
+    //   }
+    //   @media all and (min-width: 1024px) {
+    //     font-size: 16px;
+    //   }
+    }
+//     display: flex;
+//     flex-direction: column;
+//     position: relative;
+//     min-width: 280px;
+//     border: 2px solid red;
+//     // color: white;
+//     font-size: 20px;
+//     @media all and (min-width: 768px) {
+//       margin: auto;
+//       box-sizing: border-box;
+//       flex-direction: row;
+//       min-width: 700px;
+//       max-width: 1000px;
+//     }
+// }
+.details__image {
+    padding: 10px;
+    width: 50%;
+    max-width: 300px;
+    align-self: center;
+}
+    
+.details__character {
+    color:white;  
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media all and (min-width: 1024px) {
+    font-size: 20px;
+    }
+    @media all and (min-width: 1440px) {
+    font-size: 24px;
+    }
+}
+    
+  
+.detailsCard__house {
+    margin: 10px;
+    height: 60px;
+    width: 60px;
+    border-radius: 60%;
+    align-self: center;
+    @media all and (min-width: 768px) {
+    position: absolute;
+    right:0;
+    top:0;
+    }
+    @media all and (min-width: 1024px) {
+    height: 100px;
+    width: 100px;
+    }
+}
+.details__name {
+    font-size: 20px;
+    @media all and (min-width: 1024px) {
+      font-size: 24px;
+    }
+    @media all and (min-width: 1440px) {
+      font-size: 24px;
+    }
+}

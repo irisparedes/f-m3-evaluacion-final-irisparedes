@@ -2,16 +2,16 @@ import React, {Component} from 'react';
 import Filters from './Filters';
 import CardList from './CardList';
 import PropTypes from 'prop-types';
+import '../stylesheets/_home.scss';
 
 class Home extends Component {
     render() {
         const {cardsCharacters, queryName, filterName, paintHouse} = this.props;
         return (
-            <React.Fragment>
-                <h1 className="home__title">Harry Potter Characters</h1>
+            <div className="home__container">
                 <Filters filterName={filterName} queryName={queryName}/>
                 <CardList cardsCharacters={cardsCharacters} queryName={queryName} paintHouse={paintHouse} />
-            </React.Fragment>
+            </div>
                
         );
     }
