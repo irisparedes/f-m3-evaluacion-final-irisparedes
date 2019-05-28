@@ -17,11 +17,13 @@ class App extends React.Component {
 
     this.state = {
       cards: [],
-      queryName: ''
+      queryName: '',
+      queryDate: 0
     };
     this.handleFilterName = this.handleFilterName.bind(this);
     this.getCards = this.getCards.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
+    this.handleFilterDate = this.handleFilterDate.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +38,18 @@ class App extends React.Component {
       })
 
   }
+
+  handleFilterDate(event) {
+    const cardDate = event.currentTarget.value;
+    console.log(cardDate);
+
+      this.setState({
+        queryDate: cardDate
+      })
+
+  }
+
+
 
   resetFilters() {
     this.setState({queryName: ''});
@@ -83,6 +97,8 @@ class App extends React.Component {
               queryName={queryName}
               filterName={this.handleFilterName}
               paintHouse={paintHouse}
+              queryDate={this.state.queryDate}
+              filterDate={this.handleFilterDate}
               />} />
             <Route path="/detailscard/:id"  render={routerProps => <DetailsCard 
               match={routerProps.match} 

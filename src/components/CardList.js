@@ -6,12 +6,13 @@ import '../stylesheets/_cardList.scss';
 
 class CardList extends Component {
     render() {
-        const {cardsCharacters, queryName, paintHouse} = this.props;
+        const {cardsCharacters, queryName, paintHouse, queryDate} = this.props;
         return (
             <div className="card__list">
                 <ul className="list">
                     {cardsCharacters
                         .filter(item => item.name.toLowerCase().includes(queryName.toLowerCase()))
+                        .filter(item => item.yearOfBirth >= (parseInt(queryDate)))
                         .map(item => {
                             return (
                                 <li className="card__li" key={item.id}>

@@ -6,11 +6,11 @@ import '../stylesheets/_home.scss';
 
 class Home extends Component {
     render() {
-        const {cardsCharacters, queryName, filterName, paintHouse} = this.props;
+        const {cardsCharacters, queryName, filterName, paintHouse, queryDate, filterDate} = this.props;
         return (
             <div className="home__container">
-                <Filters filterName={filterName} queryName={queryName}/>
-                <CardList cardsCharacters={cardsCharacters} queryName={queryName} paintHouse={paintHouse} />
+                <Filters filterName={filterName} queryName={queryName} filterDate={filterDate}/>
+                <CardList cardsCharacters={cardsCharacters} queryName={queryName} paintHouse={paintHouse}  queryDate={queryDate}/>
             </div>
                
         );
